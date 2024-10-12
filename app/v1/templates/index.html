@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <main class="main bg-light p-4 border rounded">
+        <h2 class="text-center mb-5" style="color: lightseagreen;">embe zuri</h2>
+        <div class="form">
+            <form action="/upload" method="post" enctype="multipart/form-data" class="text-center">
+
+                <div class="form-group mb-4">
+                    <label for="photo" class="d-block text-center;">Upload Leaf Image</label>
+                    <input type="file" class="form-control w-50 mx-auto" id="image" name="image" accept="image/*">
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4">Submit</button>
+            </form>
+        </div>
+    </main>
+{% endblock %}
