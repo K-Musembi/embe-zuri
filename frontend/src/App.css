@@ -1,0 +1,212 @@
+/* Overall theme colors */
+:root {
+    --lemon-green: #ccff33;
+    --dark-green: #4d7c0f;
+    --light-gray: #f7f7f7;
+    --text-dark: #333;
+    --text-light: #fff;
+}
+
+/* Base styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: var(--dark-green);
+    text-align: center;
+}
+
+button {
+    background-color: var(--lemon-green);
+    color: var(--text-dark);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: var(--dark-green);
+    color: var(--text-light);
+}
+
+/* Shared container style */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--light-gray);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Home Component */
+.home-container {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.home-container p {
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+/* ImageUpload Component */
+.image-upload {
+    text-align: center;
+}
+
+.image-upload input[type="file"] {
+    margin: 10px 0;
+}
+
+.image-upload button {
+    margin-top: 10px;
+}
+
+/* SignUp Component */
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-container label {
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Login Component */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-container label {
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Result Component */
+.result-container {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--lemon-green);
+    border-radius: 10px;
+    color: var(--text-dark);
+}
+
+.result-container h2 {
+    color: var(--text-dark);
+}
+
+.result-container p {
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+/* Team Component */
+.team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.team-card {
+    background-color: #d4edda; /* light lemon green */
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.team-photo img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    /* border: 3px solid var(--dark-green); */
+}
+
+.team-photo p {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-info h3 {
+    color: var(--dark-green);
+}
+
+.team-info p {
+    margin: 5px 0;
+    color: var(--text-dark);
+}
+
+.team-info a {
+    color: var(--dark-green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.team-info a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Ensure containers occupy full width on smaller screens */
+    .container, .team-container {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Resize text for better readability on small screens */
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .team-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .home-container p, .result-container p, .team-info p {
+        font-size: 16px;
+    }
+}
