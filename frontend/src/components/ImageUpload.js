@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config";
 
 const ImageUpload = ({ onResult }) => {
     const [file, setFile] = useState(null);
+    const navigate = useNavigate();
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);  // when event occurs, set file
@@ -22,6 +24,7 @@ const ImageUpload = ({ onResult }) => {
             if (response.ok) {
                 const result = await response.json();
                 onResult(result);  // pass result to parent component
+                navigate("/result");
             }
         } catch (err) {
             console.error("Upload failed:", err);

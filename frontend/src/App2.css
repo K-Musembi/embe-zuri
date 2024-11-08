@@ -1,0 +1,236 @@
+/* Variables */
+:root {
+    --main-bg-color: #f0f8e2;   /* Light yellow-green */
+    --accent-color: #c4e538;    /* Bright yellow-green for accents */
+    --button-color: #a3d920;
+    --button-hover-color: #8abf1f;
+    --text-color: #333;         /* Dark grey for readability */
+    --border-radius: 8px;
+    --font-family: Arial, sans-serif;
+}
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--accent-color);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Home Page */
+.home-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem;
+    background-image: url('image.jpg'); /* Make sure this path is correct */
+    background-size: cover;
+    background-position: center;
+}
+
+.home-container h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.home-container button {
+    background-color: var(--button-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-container button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Image Upload */
+.image-upload-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-upload-container input[type="file"] {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 2px dashed #ccc;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.image-upload-container button {
+    background-color: var(--button-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.image-upload-container button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Results Display */
+.result-container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.result-container h2 {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.result-container p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Forms (Signup & Login) */
+.form-container {
+    padding: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.form-container label {
+    font-weight: bold;
+    margin-top: 1rem;
+    display: block;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+}
+
+.form-container button {
+    background-color: var(--button-color);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    width: 100%;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Team Page */
+.team-container {
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 1rem 0;
+}
+
+.team-photo img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+}
+
+.team-info p {
+    margin: 0.5rem 0;
+}
+
+.team-info a {
+    color: var(--button-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.team-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--accent-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .home-container h1 {
+        font-size: 2rem;
+    }
+
+    .team-card {
+        flex-direction: column;
+    }
+
+    .image-upload-container, .result-container, .form-container {
+        padding: 1rem;
+    }
+}

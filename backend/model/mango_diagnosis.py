@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """mango diagnosis model"""
 
-from model.base_model import BaseModel
-from model import db
+from .base_model import BaseModel
+from . import db
 from typing import Dict, Any
 # import json
 

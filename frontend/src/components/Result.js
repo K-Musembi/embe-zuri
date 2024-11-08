@@ -8,7 +8,7 @@ const Result = ({ result }) => {
                 <div>
                     <h2>Prediction outcome</h2>
                     <p>Disease: {result.prediction}</p>
-                    <p>Confidence: {result.confidence * 100}%</p>
+                    <p>Confidence: {result.confidence}%</p>
                 </div>
             ) : (
                 <p>Please upload an image</p>

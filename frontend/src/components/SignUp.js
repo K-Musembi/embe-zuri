@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { API_URL } from "../config";
 
 const SignUp = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    
+    const navigate = useNavigate()
 
     const handleSignUp = async (event) => {
         event.preventDefault();
@@ -12,13 +15,14 @@ const SignUp = () => {
         const response = await fetch(`${API_URL}/signup`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, email, password }),
+            body: JSON.stringify({ username, email, password })
         });
         if (response.ok) {
             alert("Successfully signed up!");
             setUsername("");
             setEmail("");
             setPassword("");
+            navigate("/");
         } else {
             alert("Please try again.");
         }

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config";
 
 const Login = ({ onLogin }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate()
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -11,14 +14,15 @@ const Login = ({ onLogin }) => {
         const response = await fetch(`${API_URL}/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ username, password })
         });
         if (response.ok) {
             const result = await response.json();
             onLogin(result.token);
-            alert("Successful login!")
+            alert("Successful login!");
+            navigate("/");
         } else {
-            alert("Check your credentials and try again.")
+            alert("Check your credentials and try again.");
         }
     };
 

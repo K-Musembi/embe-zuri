@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """base model"""
 
-from model import db
+from . import db
 from datetime import datetime
 from typing import Dict, Any
 import uuid
@@ -18,7 +18,7 @@ class BaseModel(db.Model):
 
     def __init__(self):
         """create an instance"""
-        self.id = str(uuid.uuid4)()
+        self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
