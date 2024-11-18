@@ -10,9 +10,9 @@ const Home = () => {
     
     return (
         <div className="home-container">
-            <h1>Welcome to embe zuri App!</h1>
+            <h1>Embe Zuri App</h1>
             <p>
-                This application enables farmers to detect possible mango diseases, by analyzing leaf images. If a disease is detected, the app will give guidance on the best mitigation measures. You can get started by uploading an image in the 'Image Upload' section.
+                Enabling farmers to detect possible mango diseases, and offering solutions to mitigate them
             </p>
             <button onClick={handleGetStarted}>Get Started</button>
         </div>

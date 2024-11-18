@@ -28,11 +28,7 @@ def signup():
     
     password = generate_password_hash(password)
     
-    new_user = User({
-        "username": username,
-        "email": email,
-        "password": password
-    })
+    new_user = User(username=username, email=email, password=password)
     
     new_user.add_to_db()
 

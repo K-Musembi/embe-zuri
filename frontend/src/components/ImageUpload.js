@@ -31,12 +31,15 @@ const ImageUpload = ({ onResult }) => {
         }
     };  
     return (
-        <div className="image-upload">
+        <div className="image-upload-container">
             <h2>Upload an image</h2>
-            <input type="file" accept="image/*" onChange={handleFileChange} />
+            <label htmlFor="file-upload" className="custom-file-upload">
+                Choose File
+            </label>
+            <input id="file-upload" type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFileChange} />
             <button onClick={handleUpload}>Upload</button>
         </div>
-    ); 
+    );
 };
 
 export default ImageUpload;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from "../config";
 
-const SignUp = () => {
+const SignUp = ({ onSignUp }) => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -22,6 +22,7 @@ const SignUp = () => {
             setUsername("");
             setEmail("");
             setPassword("");
+            onSignUp(true);
             navigate("/");
         } else {
             alert("Please try again.");
@@ -29,7 +30,7 @@ const SignUp = () => {
     };
 
     return (
-        <div className="signup-container">
+        <div className="signup-login-container">
             <h2>Create Account</h2>
             <form onSubmit={handleSignUp}>
                 <label>

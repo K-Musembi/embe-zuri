@@ -17,9 +17,10 @@ const Login = ({ onLogin }) => {
             body: JSON.stringify({ username, password })
         });
         if (response.ok) {
-            const result = await response.json();
-            onLogin(result.token);
+            // const result = await response.json();
+            // onLogin(result.token);
             alert("Successful login!");
+            onLogin(true);
             navigate("/");
         } else {
             alert("Check your credentials and try again.");
@@ -27,7 +28,7 @@ const Login = ({ onLogin }) => {
     };
 
     return (
-        <div className="login-container">
+        <div className="signup-login-container">
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <label>
@@ -39,6 +40,9 @@ const Login = ({ onLogin }) => {
                     <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
                 </label>
                 <button type="submit">Submit</button>
+                <p>
+                    Not yet registered? <a href="/signup">Sign Up</a>
+                </p>
             </form>
         </div>
     );

@@ -3,7 +3,7 @@ import React from "react";
 const Result = ({ result }) => {
     
     return (
-        <div className="result-container">
+        <div className="result-panel">
             {result ? (
                 <div>
                     <h2>Prediction outcome</h2>
@@ -11,7 +11,9 @@ const Result = ({ result }) => {
                     <p>Confidence: {result.confidence}%</p>
                 </div>
             ) : (
-                <p>Please upload an image</p>
+                <div className="no-result">
+                    <p>Please upload an image</p>
+                </div>
             )}
         </div>
     );
