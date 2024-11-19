@@ -25,12 +25,12 @@ app.secret_key = os.urandom(24)
 db.init_app(app)
 
 with app.app_context():
-    from model import MangoDiagnosis
+    from model import MangoDiagnosis, User, UserQuery
     db.create_all()  # import models before calling method
 
 app.register_blueprint(v2_app_views)
 
-CORS = CORS(app, resources={r"/*": {"origins": "*"}})
+CORS = CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 
 @app.errorhandler(404)

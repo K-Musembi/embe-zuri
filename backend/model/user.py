@@ -12,7 +12,7 @@ class User(BaseModel):
 
     username = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), nullable=False)
-    password = db.Column(db.String(128), nullable=False)
+    password = db.Column(db.String(512), nullable=False)
     
     def __init__(self, **kwargs: Dict[str, str]):
         """initialize user instance"""

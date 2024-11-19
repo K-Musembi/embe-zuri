@@ -10,8 +10,8 @@ from model import User, MangoDiagnosis, UserQuery
 from PIL import Image
 import io
 
-# pd = Prediction()
-pd = Prediction_Lite()
+pd = Prediction()
+# pd = Prediction_Lite()
 
 
 @v2_app_views.route("/signup", methods=['POST'], strict_slashes=False)
@@ -54,7 +54,7 @@ def login():
     return jsonify({"error": "invalid credentials"}), 400
 
 
-@v2_app_views.route("/logout", methods=['POST'], strict_slashes=False)
+@v2_app_views.route("/logout", strict_slashes=False)
 def logout():
     """log out users"""
     session.clear()
