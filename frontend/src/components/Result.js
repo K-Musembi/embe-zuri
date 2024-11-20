@@ -5,10 +5,28 @@ const Result = ({ result }) => {
     return (
         <div className="result-panel">
             {result ? (
-                <div>
-                    <h2>Prediction outcome</h2>
-                    <p>Disease: {result.prediction}</p>
-                    <p>Confidence: {result.confidence}%</p>
+                <div className="result-container">
+                    <div className="prediction-outcome">
+                        <h2>Prediction outcome</h2>
+                        {result.prediction === "Healthy" ? (
+                            <>
+                                <h3 className="healthy">Healthy</h3>
+                                <h3>Confidence: {result.confidence}%</h3>
+                            </>
+                        ) : (
+                            <>
+                                <h3 className="not-healthy">Not healthy: Disease detected</h3>
+                                <h3>Probable disease: {result.prediction}</h3>
+                                <h3>Confidence: {result.confidence}%</h3>
+                            </>
+                        )}
+                    </div>
+                    <div className="recommendations">
+                        <h2>Recommendations</h2>
+                        {result.remedies.map((remedy, index) => (
+                            <div className="remedy" key={index}>{remedy}</div>
+                        ))}
+                    </div>
                 </div>
             ) : (
                 <div className="no-result">

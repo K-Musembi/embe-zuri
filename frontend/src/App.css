@@ -296,60 +296,90 @@ footer a:hover {
     background-color: #45a049; /* Slightly darker color on hover */
   }
   
-
-/* Result Panels */
+/* Overall styling */
 .result-panel {
-    min-height: 80vh;
-    max-width: 600px;
-    align-items: center; /* center horizontally */
-    justify-content: center; /* center vertically */
-    background-color: var(--white);
-    flex: 1;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #f9fbe7; /* Light yellow-green background */
+    min-height: 100vh; /* Occupy full height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .result-container {
+    min-height: 60vh;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.result-panel:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.15);
-}
-
-.result-panel h2 {
-    color: var(--dark-green);
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-}
-
-.result-panel p {
-    color: var(--text-dark);
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-.result-panel button {
-    align-self: flex-start;
-    background-color: var(--dark-green);
-    color: var(--white);
-    border: none;
-    padding: 10px 15px;
-    font-size: 1rem;
+  }
+  
+  /* Column styling */
+  .prediction-outcome,
+  .recommendations {
+    min-height: 60vh;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #c8e6c9; /* Subtle border for separation */
+    border-radius: 8px;
+  }
+  
+  .prediction-outcome h2,
+  .recommendations h2 {
+    margin-bottom: 15px;
+    color: #558b2f; /* Dark green */
+  }
+  
+  .remedy {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e8f5e9; /* Light green for remedies */
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-}
-
-.result-panel button:hover {
-    background-color: var(--yellow-green);
-    color: var(--text-dark);
-}
-
-.result-panel button:active {
-    transform: scale(0.97);
-}
+    color: #33691e;
+  }
+  
+  /* Healthy and not-healthy styles */
+  .healthy {
+    color: #43a047; /* Green for healthy */
+  }
+  
+  .not-healthy {
+    color: #d32f2f; /* Red for unhealthy */
+  }
+  
+  /* No result styling */
+  .no-result {
+    text-align: center;
+    color: #666;
+  }
+  
+  .no-result p {
+    font-size: 1.2em;
+    color: #8e8e8e;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .result-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .prediction-outcome,
+    .recommendations {
+      padding: 15px;
+    }
+  }
+  
 
 /* Team Container */
 .team-container {
@@ -395,6 +425,7 @@ footer a:hover {
     object-fit: cover;
     border: 2px solid #ccc;
     margin: 0 auto; /* Center the image */
+    aspect-ratio: 1 / 1;
   }
   
   .team-info {

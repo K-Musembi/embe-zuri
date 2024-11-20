@@ -7,8 +7,7 @@ const Logout = ({ onLogout }) => {
 
     const handleLogout = async () => {
         const response = await fetch(`${API_URL}/logout`, {
-            method: 'POST',
-            credentials: 'include'
+            credentials: 'include',
         });
         
         if (response.ok) {
@@ -21,7 +20,7 @@ const Logout = ({ onLogout }) => {
 
     return (
         <div className='logout-container'>
-            <p>Logout from the app</p>
+            <p>Logout from the app?</p>
             <button className='logout-button' onClick={handleLogout}>
                 Logout
             </button>

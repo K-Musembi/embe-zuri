@@ -21,7 +21,7 @@ const Login = ({ onLogin }) => {
             // onLogin(result.token);
             alert("Successful login!");
             onLogin(true);
-            navigate("/");
+            navigate("/upload");
         } else {
             alert("Check your credentials and try again.");
         }

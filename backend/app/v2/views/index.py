@@ -79,7 +79,7 @@ def upload():
 
         name = result["prediction"]
         diagnosis = MangoDiagnosis.query.filter_by(name=name).first()
-        # result.append({"remedies": diagnosis.remedies})
+        result.update({"remedies": diagnosis.remedies})
 
         if "user_id" in session:
             query = UserQuery({

@@ -23,7 +23,7 @@ const SignUp = ({ onSignUp }) => {
             setEmail("");
             setPassword("");
             onSignUp(true);
-            navigate("/");
+            navigate("/upload");
         } else {
             alert("Please try again.");
         }
