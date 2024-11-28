@@ -1,3 +1,5 @@
 backend/.env
+backend/*.pyc
+backend/**/__pycache__/
 venv
-__pycache__
+embezuri_db.sql
