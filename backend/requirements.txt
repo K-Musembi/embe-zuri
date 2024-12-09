@@ -12,4 +12,3 @@ mysqlclient
 # mysql-connector-python==9.0.0
 Pillow==10.4.0
 python-dotenv==1.0.1
-gunicorn
