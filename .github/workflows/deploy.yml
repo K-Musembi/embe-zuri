@@ -1,0 +1,31 @@
+name: Deploy Embe-Zuri App
+
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Deploy to Server
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: |
+        eval "$(ssh-agent -s)" && ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
+        ssh -o StrictHostKeyChecking=no ubuntu@13.53.35.13 << 'EOF'
+          cd /home/ubuntu/embe-zuri
+          git pull
+          git lfs pull
+          cd /home/ubuntu/embe-zuri/backend
+          pip3 install -r requirements.txt
+          sudo systemctl restart gunicorn
+          cd /home/ubuntu/embe-zuri/frontend
+          npm run build
+        EOF
+

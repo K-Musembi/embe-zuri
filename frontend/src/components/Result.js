@@ -30,7 +30,7 @@ const Result = ({ result }) => {
                 </div>
             ) : (
                 <div className="no-result">
-                    <p>Please upload an image</p>
+                    <p>Please upload a mango leaf image</p>
                 </div>
             )}
         </div>
