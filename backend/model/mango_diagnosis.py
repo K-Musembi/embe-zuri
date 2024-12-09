@@ -32,4 +32,4 @@ class MangoDiagnosis(BaseModel):
 
     def __str__(self):
         """object string representation"""
-        return "mango diagnosis object"
+        return "mango diagnosis instance"
