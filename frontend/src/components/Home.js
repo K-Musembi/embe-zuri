@@ -12,7 +12,7 @@ const Home = () => {
         <div className="home-container">
             <h1>Embe Zuri App</h1>
             <p>
-                Enabling farmers to detect possible mango diseases, and offering solutions to mitigate them
+                Enabling early detection of mango fruit tree diseases, and offering solutions to mitigate them
             </p>
             <button onClick={handleGetStarted}>Get Started</button>
         </div>
