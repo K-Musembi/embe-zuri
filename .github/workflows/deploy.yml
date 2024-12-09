@@ -26,6 +26,7 @@ jobs:
           cd /home/ubuntu/embe-zuri/backend
           pip3 install -r requirements.txt
           sudo systemctl restart gunicorn
+          sudo systemctl start nginx
           cd /home/ubuntu/embe-zuri/frontend
           npm install
           npm run build
