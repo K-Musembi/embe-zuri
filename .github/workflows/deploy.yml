@@ -20,6 +20,7 @@ jobs:
         eval "$(ssh-agent -s)" && ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
         ssh -o StrictHostKeyChecking=no ubuntu@13.53.35.13 << 'EOF'
           cd /home/ubuntu/embe-zuri
+          git stash
           git pull
           git lfs pull
           cd /home/ubuntu/embe-zuri/backend
