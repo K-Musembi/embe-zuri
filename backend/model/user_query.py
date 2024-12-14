@@ -3,7 +3,7 @@
 
 from . import db
 from .base_model import BaseModel
-from typing import Dict
+from typing import Dict, Any
 
 
 class UserQuery(BaseModel):
@@ -19,7 +19,7 @@ class UserQuery(BaseModel):
     mango_diagnosis = db.relationship(
         "MangoDiagnosis", backref=db.backref("queries", lazy=True))
     
-    def __init__(self, **kwargs: Dict[str, str]):
+    def __init__(self, **kwargs: Dict[str, Any]):
         """initialize user query instance"""
         super().__init__()
 

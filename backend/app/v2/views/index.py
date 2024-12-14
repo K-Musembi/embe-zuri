@@ -82,10 +82,10 @@ def upload():
         result.update({"remedies": diagnosis.remedies})
 
         if "user_id" in session:
-            query = UserQuery({
-                "user_id": session["user_id"],
-                "mango_diagnosis_id": diagnosis.id
-            })
+            query = UserQuery(
+                user_id=session["user_id"],
+                mango_diagnosis_id=diagnosis.id
+            )
 
             query.add_to_db()
 

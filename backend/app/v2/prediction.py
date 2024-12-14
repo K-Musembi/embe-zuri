@@ -18,8 +18,10 @@ class Prediction():
     def __init__(self) -> None:
         """initialize and load model"""
 
-        self.model = tf.keras.models.load_model(
-            'app/v1/mango_disease_model_2.keras')
+        '''self.is_mango_model = tf.keras.models.load_model(
+            'app/v2/mango_leaf_or_not.keras')'''
+        self.prediction_model = tf.keras.models.load_model(
+            'app/v2/mango_disease_model_Dense169.keras')
 
     def img_to_tensor(self, image: BinaryIO) -> tf.Tensor:
         """convert image to Tensor object"""
@@ -48,20 +50,20 @@ class Prediction():
 
         return normalized_image
 
-    # @tf.function(reduce_retracing=True) - reduce number of tracings
+    '''def is_mangoleaf(self, image: tf.Tensor) -> bool:
+        """confirm if uploaded image is a mango leaf"""
+
+        mango_leaf_prediction = self.is_mango_model.predict(image)
+
+        # result is a Numpy array
+        probability = mango_leaf_prediction[0][0]
+
+        return probability'''
+    
     def predict(self, image: tf.Tensor) -> str:
         """predict image class using deep learning model"""
 
-        predicted = self.model.predict(image)
-
-        # convert Tensor (or NumPy) object to Python list
-        # result is a list of probabilities / scores for each class
-        #   results = predicted.tolist()
-
-        # class_predictions = {}
-
-        # for name, score in zip(mango_disease_names, results):
-        #    class_predictions.update({name: score})
+        predicted = self.prediction_model.predict(image)
 
         # predicted is a NumPy array. Find index of largest probability
         index = np.argmax(predicted)

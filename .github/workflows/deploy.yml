@@ -18,17 +18,17 @@ jobs:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
         eval "$(ssh-agent -s)" && ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
-        ssh -o StrictHostKeyChecking=no ubuntu@13.53.35.13 << 'EOF'
+        ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=10 ubuntu@13.53.35.13 << 'EOF'
           cd /home/ubuntu/embe-zuri
           git stash
           git pull
           git lfs pull
           cd /home/ubuntu/embe-zuri/backend
-          pip3 install -r requirements.txt
           sudo systemctl restart gunicorn
-          sudo systemctl start nginx
           cd /home/ubuntu/embe-zuri/frontend
-          npm install
           npm run build
+          sudo systemctl restart nginx
         EOF
 
+# Add: 'pip3 install -r requirements.txt' if backend dependencies are added
+# Add: 'npm install' if frontend dependencies are added

@@ -1,463 +1,543 @@
 /* Overall theme colors */
 :root {
-    --yellow-green: #9acd32; /* Yellow-green for primary theme color */
-    --dark-green: #556b2f; /* Darker shade of yellow-green */
-    --light-gray: #f7f7f7;
-    --white: #ffffff;
-    --text-dark: #333;
+  --yellow-green: #9acd32; /* Yellow-green for primary theme color */
+  --dark-green: #556b2f; /* Darker shade of yellow-green */
+  --light-gray: #f7f7f7;
+  --white: #ffffff;
+  --text-dark: #333;
 }
 
 /* Main Layout Styling */
 .main-layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: 'Arial', sans-serif;
-    color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  color: var(--text-dark);
 }
 
 /* Main Content Area */
 .main-layout > * {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 /* Footer Styling */
 footer {
-    background-color: var(--dark-green);
-    color: var(--white);
-    text-align: center;
-    padding: 15px 0;
-    font-size: 14px;
-    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
-    margin-top: auto;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--dark-green);
+  color: var(--white);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Link Styling in Footer */
 footer a {
-    color: var(--yellow-green);
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+  color: var(--yellow-green);
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Navigation Bar Container */
 .nav-bar {
-    background-color: var(--dark-green);
-    padding: 10px 20px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
+  background-color: var(--dark-green);
+  padding: 10px 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
 }
 
 /* Unordered List within the NavBar */
 .nav-bar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
 }
 
 /* List Items and Links within the NavBar */
 .nav-bar li {
-    margin: 0;
+  margin: 0;
 }
 
 .nav-bar a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-bar a:hover {
-    background-color: var(--yellow-green);
-    color: var(--text-dark);
+  background-color: var(--yellow-green);
+  color: var(--text-dark);
 }
 
 .nav-bar a.active {
-    background-color: var(--yellow-green);
-    color: var(--text-dark);
+  background-color: var(--yellow-green);
+  color: var(--text-dark);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 /* Home Container Styling */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--light-gray);
-    background-size: cover;
-    background-position: center;
-    background: url('image.jpg') center/cover no-repeat;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--light-gray);
+  background-size: cover;
+  background-position: center;
+  background: url('image.jpg') center/cover no-repeat;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
 }
 
 .home-container h1 {
-    font-size: 3rem;
-    color: var(--dark-green);
-    margin-bottom: 20px;
+  font-size: 3rem;
+  color: var(--dark-green);
+  margin-bottom: 20px;
 }
 
 .home-container p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: var(--text-dark);
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--text-dark);
 }
 
 /* Button Styling */
 .home-container button {
-    padding: 10px 20px;
-    background-color: var(--dark-green);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  background-color: var(--dark-green);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .home-container button:hover {
-    background-color: var(--yellow-green);
-    color: var(--text-dark);
+  background-color: var(--yellow-green);
+  color: var(--text-dark);
 }
 
 /* SignUp and Login Form Container */
 .signup-login-container {
-    background-color: var(--light-gray);
-    width: 100%;
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+  background-color: var(--light-gray);
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
 }
 
 .signup-login-container h2 {
-    color: var(--dark-green);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
+  color: var(--dark-green);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
 }
 
 .signup-login-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .signup-login-container input {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid var(--yellow-green);
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-    display: flex;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--yellow-green);
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  display: flex;
 }
 
 .signup-login-container input:focus {
-    border-color: var(--dark-green);
+  border-color: var(--dark-green);
 }
 
 .signup-login-container button {
-    background-color: var(--dark-green);
-    color: var(--white);
-    border: none;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+  background-color: var(--dark-green);
+  color: var(--white);
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .signup-login-container button:hover {
-    background-color: var(--yellow-green);
-    color: var(--text-dark);
+  background-color: var(--yellow-green);
+  color: var(--text-dark);
 }
 
 .signup-login-container button:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 /* Logout Container */
 .logout-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--light-gray);
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--light-gray);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
 }
 
 .logout-container p {
-    font-size: 1.5rem;
-    color: var(--dark-green);
-    margin-bottom: 30px;
+  font-size: 1.5rem;
+  color: var(--dark-green);
+  margin-bottom: 30px;
 }
 
 .logout-container button {
-    padding: 10px 20px;
-    background-color: var(--dark-green);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  background-color: var(--dark-green);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .logout-container button:hover {
-    background-color: var(--yellow-green);
-    color: var(--text-dark);
+  background-color: var(--yellow-green);
+  color: var(--text-dark);
 }
 
 .image-upload-container {
-    min-height: 60vh; /* 100vh occupies full viewport height */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* center horizontally */
-    justify-content: center; /* center vertically */
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-  }
-  
-  .image-upload-container h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .image-upload-container input[type="file"] {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 1em;
-    cursor: pointer;
-  }
-  
-  .image-upload-container button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 30px;
-  }
-  
-  .image-upload-container button:hover {
-    background-color: #0056b3;
-  }
+  min-height: 60vh; /* 100vh occupies full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  justify-content: center; /* center vertically */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
 
-  .custom-file-upload {
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #4CAF50; /* Button color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .custom-file-upload:hover {
-    background-color: #45a049; /* Slightly darker color on hover */
-  }
-  
+.image-upload-container h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.image-upload-container input[type="file"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.image-upload-container button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 30px;
+}
+
+.image-upload-container button:hover {
+  background-color: #0056b3;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.custom-file-upload:hover {
+  background-color: #45a049; /* Slightly darker color on hover */
+}
+
 /* Overall styling */
 .result-panel {
-    font-family: Arial, sans-serif;
-    color: #333;
-    padding: 20px;
-    background-color: #f9fbe7; /* Light yellow-green background */
-    min-height: 100vh; /* Occupy full height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+  background-color: #f9fbe7; /* Light yellow-green background */
+  min-height: 100vh; /* Occupy full height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-container {
+  min-height: 60vh;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Column styling */
+.prediction-outcome,
+.recommendations {
+  min-height: 60vh;
+  align-items: center;
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #c8e6c9; /* Subtle border for separation */
+  border-radius: 8px;
+}
+
+.prediction-outcome h2,
+.recommendations h2 {
+  margin-bottom: 15px;
+  color: #558b2f; /* Dark green */
+}
+
+.remedy {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #e8f5e9; /* Light green for remedies */
+  border-radius: 5px;
+  color: #33691e;
+}
+
+/* Healthy and not-healthy styles */
+.healthy {
+  color: #43a047; /* Green for healthy */
+}
+
+.not-healthy {
+  color: #d32f2f; /* Red for unhealthy */
+}
+
+/* No result styling */
+.not-mango-leaf {
+  text-align: center;
+  color: #666;
+}
+
+.not-mango-leaf p {
+  font-size: 1.2em;
+  color: #8e8e8e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .result-container {
-    min-height: 60vh;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  /* Column styling */
+
   .prediction-outcome,
   .recommendations {
-    min-height: 60vh;
-    align-items: center;
-    flex: 1;
-    padding: 20px;
-    border: 1px solid #c8e6c9; /* Subtle border for separation */
-    border-radius: 8px;
+    padding: 15px;
   }
-  
-  .prediction-outcome h2,
-  .recommendations h2 {
-    margin-bottom: 15px;
-    color: #558b2f; /* Dark green */
-  }
-  
-  .remedy {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #e8f5e9; /* Light green for remedies */
-    border-radius: 5px;
-    color: #33691e;
-  }
-  
-  /* Healthy and not-healthy styles */
-  .healthy {
-    color: #43a047; /* Green for healthy */
-  }
-  
-  .not-healthy {
-    color: #d32f2f; /* Red for unhealthy */
-  }
-  
-  /* No result styling */
-  .no-result {
-    text-align: center;
-    color: #666;
-  }
-  
-  .no-result p {
-    font-size: 1.2em;
-    color: #8e8e8e;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .result-container {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .prediction-outcome,
-    .recommendations {
-      padding: 15px;
-    }
-  }
-  
+}
+
 
 /* Team Container */
 .team-container {
-    padding: 30px 20px;
-    background-color: var(--light-gray);
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
+  padding: 30px 20px;
+  background-color: var(--light-gray);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
 }
 
 .team-container h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--dark-green);
-    text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--dark-green);
+  text-align: center;
 }
 
 .team-card {
-    max-width: 500px; /* Set the card's max width */
-    width: 100%; /* Allow it to occupy full length */
-    margin: 20px auto; /* Center it horizontally */
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    overflow: hidden;
-    text-align: center; /* Center align content */
+  max-width: 500px; /* Set the card's max width */
+  width: 100%; /* Allow it to occupy full length */
+  margin: 20px auto; /* Center it horizontally */
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+  text-align: center; /* Center align content */
+}
+
+.team-photo {
+  margin-bottom: 16px; /* Space between photo and info */
+}
+
+.team-photo img {
+  width: 100%; /* Make the image responsive */
+  max-width: 150px; /* Limit the image size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover;
+  border: 2px solid #ccc;
+  margin: 0 auto; /* Center the image */
+  aspect-ratio: 1 / 1;
+}
+
+.team-info {
+  margin-top: 16px;
+}
+
+.team-info h2 {
+  margin: 0;
+  font-size: 1.5rem; /* Adjusted for emphasis */
+  color: #333;
+}
+
+.team-info .title {
+  margin: 8px 0 12px; /* Space around the title */
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.team-info p {
+  margin: 8px 0; /* Slight margin for separation */
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.team-info a {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #0077b5; /* LinkedIn's blue color */
+  text-decoration: none;
+}
+
+.team-info a:hover {
+  text-decoration: underline; /* Underline on hover */
+}  
+
+@media (max-width: 480px) {
+  .home-container h1 {
+      font-size: 2rem; /* Smaller font for mobile */
   }
-  
-  .team-photo {
-    margin-bottom: 16px; /* Space between photo and info */
+  .signup-login-container, .team-card {
+      padding: 10px; /* Reduce padding for smaller screens */
   }
-  
-  .team-photo img {
-    width: 100%; /* Make the image responsive */
-    max-width: 150px; /* Limit the image size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Make it circular */
-    object-fit: cover;
-    border: 2px solid #ccc;
-    margin: 0 auto; /* Center the image */
-    aspect-ratio: 1 / 1;
+  .nav-bar ul {
+      flex-direction: column; /* Stack menu items */
+      gap: 10px;
   }
-  
-  .team-info {
-    margin-top: 16px;
+  .nav-bar a {
+      padding: 10px; /* Larger clickable area */
+      font-size: 1rem;
   }
-  
-  .team-info h2 {
-    margin: 0;
-    font-size: 1.5rem; /* Adjusted for emphasis */
-    color: #333;
+  .burger-menu {
+    display: block;
   }
-  
-  .team-info .title {
-    margin: 8px 0 12px; /* Space around the title */
-    font-size: 1.1rem;
-    color: #666;
+
+  .nav-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background-color: var(--dark-green);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 10px;
   }
-  
-  .team-info p {
-    margin: 8px 0; /* Slight margin for separation */
-    font-size: 0.95rem;
-    color: #444;
+
+  .nav-menu.active {
+    display: flex; /* Show when toggled */
   }
-  
-  .team-info a {
-    display: inline-block;
-    margin-top: 12px;
-    font-size: 0.9rem;
-    color: #0077b5; /* LinkedIn's blue color */
+
+  .nav-menu a {
+    padding: 10px;
+    color: var(--white);
+    text-align: center;
     text-decoration: none;
+    font-size: 1rem;
   }
-  
-  .team-info a:hover {
-    text-decoration: underline; /* Underline on hover */
-  }  
+
+  .nav-menu a:hover {
+    background-color: var(--yellow-green);
+  }
+
+  footer {
+      font-size: 12px; /* Optimize footer text for mobile */
+  }
+
+  .container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .nav-bar {
+    padding: 10px;
+  }
+
+  .home-container {
+    padding: 20px;
+  }
+}

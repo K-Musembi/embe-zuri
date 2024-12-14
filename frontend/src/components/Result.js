@@ -29,7 +29,7 @@ const Result = ({ result }) => {
                     </div>
                 </div>
             ) : (
-                <div className="no-result">
+                <div className="not-mango-leaf">
                     <p>Please upload a mango leaf image</p>
                 </div>
             )}
