@@ -18,7 +18,7 @@ jobs:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
         eval "$(ssh-agent -s)" && ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
-        ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=10 ubuntu@13.53.35.13 << 'EOF'
+        ssh -o StrictHostKeyChecking=no ubuntu@13.53.35.13 << 'EOF'
           cd /home/ubuntu/embe-zuri
           git stash
           git pull
