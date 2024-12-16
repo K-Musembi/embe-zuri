@@ -10,9 +10,9 @@ const Home = () => {
     
     return (
         <div className="home-container">
-            <h1>Embe Zuri App</h1>
+            <h1>embe zuri</h1>
             <p>
-                Enabling early detection of mango fruit tree diseases, and offering solutions to mitigate them
+                Welcome to embe zuri. This app enables early detection of mango fruit tree diseases, and offers solutions to mitigate them.
             </p>
             <button onClick={handleGetStarted}>Get Started</button>
         </div>

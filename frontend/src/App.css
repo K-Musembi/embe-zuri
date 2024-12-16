@@ -95,22 +95,6 @@ footer a:hover {
   color: var(--text-dark);
 }
 
-.nav-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 20px;
-}
-
-.burger-menu {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
 /* Home Container Styling */
 .home-container {
   display: flex;
@@ -121,7 +105,7 @@ footer a:hover {
   background-color: var(--light-gray);
   background-size: cover;
   background-position: center;
-  background: url('image.jpg') center/cover no-repeat;
+  /*background: url('image.jpg') center/cover no-repeat;*/
   font-family: 'Arial', sans-serif;
   text-align: center;
 }
@@ -135,7 +119,9 @@ footer a:hover {
 .home-container p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: var(--text-dark);
+  max-width: 500px;
+  color: var(--dark-green);
+  font-weight: bold;
 }
 
 /* Button Styling */
@@ -477,67 +463,3 @@ footer a:hover {
 .team-info a:hover {
   text-decoration: underline; /* Underline on hover */
 }  
-
-@media (max-width: 480px) {
-  .home-container h1 {
-      font-size: 2rem; /* Smaller font for mobile */
-  }
-  .signup-login-container, .team-card {
-      padding: 10px; /* Reduce padding for smaller screens */
-  }
-  .nav-bar ul {
-      flex-direction: column; /* Stack menu items */
-      gap: 10px;
-  }
-  .nav-bar a {
-      padding: 10px; /* Larger clickable area */
-      font-size: 1rem;
-  }
-  .burger-menu {
-    display: block;
-  }
-
-  .nav-menu {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    background-color: var(--dark-green);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .nav-menu.active {
-    display: flex; /* Show when toggled */
-  }
-
-  .nav-menu a {
-    padding: 10px;
-    color: var(--white);
-    text-align: center;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-
-  .nav-menu a:hover {
-    background-color: var(--yellow-green);
-  }
-
-  footer {
-      font-size: 12px; /* Optimize footer text for mobile */
-  }
-
-  .container {
-    margin: 10px;
-    padding: 15px;
-  }
-
-  .nav-bar {
-    padding: 10px;
-  }
-
-  .home-container {
-    padding: 20px;
-  }
-}
