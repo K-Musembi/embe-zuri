@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Result = ({ result }) => {
+const Result = ({ result, onInfo }) => {
+    const navigate = useNavigate();
+
+    const handleInformation = () => {
+        onInfo(result.prediction);
+        navigate("/information");
+    }
     
     return (
         <div className="result-panel">
@@ -27,6 +34,7 @@ const Result = ({ result }) => {
                             <div className="remedy" key={index}>{remedy}</div>
                         ))}
                     </div>
+                    <button onClick={handleInformation}>More Information</button>
                 </div>
             ) : (
                 <div className="not-mango-leaf">

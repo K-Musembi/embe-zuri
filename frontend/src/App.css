@@ -310,6 +310,17 @@ footer a:hover {
   justify-content: center;
 }
 
+.result-panel button {
+  padding: 10px 20px;
+  background-color: var(--dark-green);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 .result-container {
   min-height: 60vh;
   align-items: center;
