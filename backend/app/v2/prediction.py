@@ -19,9 +19,9 @@ class Prediction():
         """initialize and load model"""
 
         '''self.is_mango_model = tf.keras.models.load_model(
-            'app/v2/mango_leaf_or_not.keras')'''
+            './static/mango_leaf_or_not.keras')'''
         self.prediction_model = tf.keras.models.load_model(
-            'app/v2/mango_disease_model_Dense169.keras')
+            './static/mango_disease_model_Dense169.keras')
 
     def img_to_tensor(self, image: BinaryIO) -> tf.Tensor:
         """convert image to Tensor object"""
