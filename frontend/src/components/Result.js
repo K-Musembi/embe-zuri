@@ -34,13 +34,17 @@ const Result = ({ result, onInfo }) => {
                             <div className="remedy" key={index}>{remedy}</div>
                         ))}
                     </div>
-                    <button onClick={handleInformation}>More Information</button>
                 </div>
             ) : (
                 <div className="not-mango-leaf">
                     <p>Please upload a mango leaf image</p>
                 </div>
             )}
+            {result ? (
+                <button onClick={handleInformation}>More Information</button>
+            ) : (
+                <></>
+            )} 
         </div>
     );
 };

@@ -32,7 +32,7 @@ const ImageUpload = ({ onResult }) => {
     };  
     return (
         <div className="image-upload-container">
-            <h2>Upload an image</h2>
+            <h2>Upload a mango leaf image</h2>
             <label htmlFor="file-upload" className="custom-file-upload">
                 Choose File
             </label>

@@ -306,6 +306,8 @@ footer a:hover {
   background-color: #f9fbe7; /* Light yellow-green background */
   min-height: 100vh; /* Occupy full height */
   display: flex;
+  flex-direction: column; /* To make button appear below container */
+  gap: 30px; /* Create gap between container and button */
   align-items: center;
   justify-content: center;
 }
