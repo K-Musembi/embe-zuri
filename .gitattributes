@@ -1,1 +1,5 @@
 *.keras filter=lfs diff=lfs merge=lfs -text
+*.keras !text !filter !merge !diff
+*backend/app/v2/static/refined_model_ResNet101V2.keras filter=lfs diff=lfs merge=lfs -text
+backend/app/v2/static/refined_model_Dense201.keras filter=lfs diff=lfs merge=lfs -text
+backend/app/v2/static/refined_model_ResNet101V2.keras filter=lfs diff=lfs merge=lfs -text

@@ -25,7 +25,7 @@ app.secret_key = os.urandom(24)
 db.init_app(app)
 
 with app.app_context():
-    from model import MangoDiagnosis, User, UserQuery
+    from model import MangoDiagnosis, User, UserQuery, MangoInfo
     db.create_all()  # import models before calling method
 
 app.register_blueprint(v2_app_views)

@@ -19,6 +19,8 @@ class MangoInfo(BaseModel):
     def __init__(self, **kwargs: Dict[str, Any]):
         """create mango info object"""
 
+        super().__init__()
+
         if "name" not in kwargs:
             raise ValueError("name attribute required")
         
