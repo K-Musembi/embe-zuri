@@ -109,7 +109,7 @@ def information():
         image = b64encode(file.read()).decode('utf-8')
     
     info = {
-        "name": category.name,
+        "name": category.name.capitalize(),
         "image": image,
         "description": category.general_info,
         "causes": category.causes,
