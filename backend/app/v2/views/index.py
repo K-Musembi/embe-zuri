@@ -6,8 +6,9 @@ from . import v2_app_views
 from app.v2.prediction import Prediction
 from app.v2.prediction_lite import Prediction_Lite
 from werkzeug.security import generate_password_hash, check_password_hash
-from model import User, MangoDiagnosis, UserQuery
+from model import User, MangoDiagnosis, UserQuery, MangoInfo
 from PIL import Image
+from base64 import b64encode
 import io
 
 pd = Prediction()
@@ -92,6 +93,30 @@ def upload():
         return jsonify(result), 200
     
     return jsonify({"error": "image not uploaded"}), 400
+
+
+@v2_app_views.route("/information", methods=['POST'], strict_slashes=False)
+def information():
+    """retrieve information on predicted disease or healthy"""
+    name = request.json.get("prediction")
+
+    category = MangoInfo.query.filter_by(name=name).first()
+    if not category:
+        return jsonify({"error": "category not found"}), 400
+    
+    # convert image to base 64, to send to React
+    with open(category.image, 'rb') as file:
+        image = b64encode(file.read()).decode('utf-8')
+    
+    info = {
+        "name": category.name,
+        "image": image,
+        "description": category.general_info,
+        "causes": category.causes,
+        "remedies": category.remedies
+    }
+
+    return jsonify(info), 200
 
 
 @v2_app_views.route("/admin", strict_slashes=False)
