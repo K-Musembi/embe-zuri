@@ -14,7 +14,7 @@ import './App.css';
 
 const App = () => {
     const [result, setResult] = useState(null);
-    const [info, setInfo] = useState(null);
+    const [prediction, setPrediction] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     return (
@@ -24,8 +24,8 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<MainLayout><Home /></MainLayout>} />
                     <Route path="/upload" element={<MainLayout><ImageUpload onResult={setResult} /></MainLayout>} />
-                    <Route path="/result" element={<MainLayout><Result result={result} onInfo={setInfo} /></MainLayout>} />
-                    <Route path="/information" element={<MainLayout><Information info={info} /></MainLayout>} />
+                    <Route path="/result" element={<MainLayout><Result result={result} onPrediction={setPrediction} /></MainLayout>} />
+                    <Route path="/information" element={<MainLayout><Information prediction={prediction} /></MainLayout>} />
                     <Route path="/signup" element={<MainLayout><SignUp onSignUp={setIsLoggedIn}/></MainLayout>} />
                     <Route path="/login" element={<MainLayout><Login onLogin={setIsLoggedIn}/></MainLayout>} />
                     <Route path="/team" element={<MainLayout><Team /></MainLayout>} />

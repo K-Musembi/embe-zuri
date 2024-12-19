@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Result = ({ result, onInfo }) => {
+const Result = ({ result, onPrediction }) => {
     const navigate = useNavigate();
 
     const handleInformation = () => {
-        onInfo(result.prediction);
+        onPrediction(result.prediction);
         navigate("/information");
     }
     
