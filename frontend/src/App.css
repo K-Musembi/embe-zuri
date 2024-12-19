@@ -382,6 +382,22 @@ footer a:hover {
   color: #8e8e8e;
 }
 
+.information-panel {
+  background-color: #f9fbe7;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .result-container {

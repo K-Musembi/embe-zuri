@@ -7,6 +7,9 @@ const Information = ({ prediction }) => {
     const [image, setImage] = useState(null);
     const [info, setInfo] = useState(null);
 
+    // useEffect is used when a spcific action must take place once a page is rendered
+    // useEffect dependencies should be included, if any e.g. prediction
+    // to access data from the useEffect hook, use a useState hook e.g. info
     useEffect(() => {
         const fetchInfo = async () => {
             const response = await fetch(`${API_URL}/information`, {
@@ -23,7 +26,7 @@ const Information = ({ prediction }) => {
             }
         };
         fetchInfo();
-    }, [prediction]);
+    });
 
     return (
         <div className="information-panel">
