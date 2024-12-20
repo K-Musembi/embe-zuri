@@ -1,12 +1,24 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 
 const Result = ({ result, onPrediction }) => {
     const navigate = useNavigate();
+    const prediction = result.prediction
 
-    const handleInformation = () => {
-        onPrediction(result.prediction);
-        navigate("/information");
+    const handleInformation = async () => {
+        const response = await fetch(`${API_URL}/information`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ prediction })
+        });
+        if (response.ok) {
+            const data = await response.json();
+            onPrediction(data);
+            navigate("/information");
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
     }
     
     return (

@@ -383,19 +383,94 @@ footer a:hover {
 }
 
 .information-panel {
-  background-color: #f9fbe7;
+  background-color: #f9fbe7; /* Yellow-green theme */
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 100vh; /* Occupy full height */
+  padding: 20px;
+  gap: 20px;
 }
 
 .left-panel {
   display: flex;
   flex-direction: column;
+  width: 50%; /* Half the page width */
+  background-color: #ffffff; /* Light-grey background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 20px;
+}
+
+.left-panel .description,
+.left-panel .appearance-causes {
+  flex: 1; /* Each takes up half the height of the left panel */
+}
+
+.description h2, 
+.appearance-causes h3 {
+  /*font-size: 1.8rem;*/
+  color: #558b2f; /* Dark text color */
+  margin-bottom: 10px;
+}
+
+.description p, 
+.appearance-causes p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  max-width: 500px;
 }
 
 .right-panel {
   display: flex;
   flex-direction: column;
+  width: 50%; /* Half the page width */
+  background-color: #ffffff; /* Light-grey background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 20px;
+}
+
+.right-panel .image {
+  flex: 1; /* Occupies top half of the right panel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1; /* Subtle light-grey background for image */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.right-panel .image img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.right-panel .tips-remedies {
+  flex: 1; /* Occupies bottom half of the right panel */
+  display: flex;
+  flex-direction: column;
+}
+
+.tips-remedies h3 {
+  /*font-size: 1.8rem;*/
+  color: #558b2f;
+  margin-bottom: 10px;
+}
+
+.tips-remedies .list {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  gap: 15px; /* Add spacing between items */
+  padding: 10px;
+  background-color: #f9fbe7; /* Yellow-green subtle background */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for a lifted effect */
 }
 
 /* Responsive Design */

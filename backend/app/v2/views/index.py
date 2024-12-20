@@ -100,7 +100,7 @@ def information():
     """retrieve information on predicted disease or healthy"""
     name = request.json.get("prediction")
 
-    category = MangoInfo.query.filter_by(name=name).first()
+    category = MangoInfo.query.filter_by(name=name.upper()).first()
     if not category:
         return jsonify({"error": "category not found"}), 400
     
