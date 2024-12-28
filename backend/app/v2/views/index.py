@@ -76,11 +76,13 @@ def upload():
             image = Image.open(image)
 
         preprocessed_image = pd.preprocessing(image)
+        # mangoleaf = pd.is_mangoleaf(preprocessed_image) 
         result = pd.predict(preprocessed_image)
 
         name = result["prediction"]
         diagnosis = MangoDiagnosis.query.filter_by(name=name).first()
         result.update({"remedies": diagnosis.remedies})
+        # result.update({"mangoleaf": float(mangoleaf)})
 
         if "user_id" in session:
             query = UserQuery(

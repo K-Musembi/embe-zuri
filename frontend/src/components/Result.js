@@ -4,9 +4,13 @@ import { API_URL } from "../config";
 
 const Result = ({ result, onPrediction }) => {
     const navigate = useNavigate();
-    const prediction = result.prediction
 
     const handleInformation = async () => {
+        if (!result) {
+            return;
+        }
+        
+        const prediction = result.prediction
         const response = await fetch(`${API_URL}/information`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },

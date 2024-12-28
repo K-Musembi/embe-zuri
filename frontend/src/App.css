@@ -102,7 +102,7 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: var(--light-gray);
+  background-color: ffffff;
   background-size: cover;
   background-position: center;
   /*background: url('image.jpg') center/cover no-repeat;*/
@@ -110,10 +110,14 @@ footer a:hover {
   text-align: center;
 }
 
-.home-container h1 {
-  font-size: 3rem;
-  color: var(--dark-green);
-  margin-bottom: 20px;
+.home-container img {
+  width: 150px;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  display: block;
 }
 
 .home-container p {

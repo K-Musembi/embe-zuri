@@ -6,9 +6,8 @@ import numpy as np
 from typing import BinaryIO, List
 # import werkzeug
 
-mango_disease_names = ['Anthracnose', 'Bacterial Canker', 'Cutting Weevil',
-                       'Die Back', 'Gall Midge', 'Healthy', 'Powdery Mildew',
-                       'Sooty Mould']
+mango_disease_names = ['Anthracnose', 'Bacterial Canker', 'Cutting Weevil', 'Die Back',
+                       'Gall Midge', 'Healthy', 'Powdery Mildew', 'Sooty Mould']
 
 
 class Prediction():
@@ -19,9 +18,9 @@ class Prediction():
         """initialize and load model"""
 
         '''self.is_mango_model = tf.keras.models.load_model(
-            './static/mango_leaf_or_not.keras')'''
+            'app/v2/static/.........keras')'''
         self.prediction_model = tf.keras.models.load_model(
-            'app/v2/static/mango_disease_model_Dense169.keras')
+            'app/v2/static/refined_model_Dense201.keras')
 
     def img_to_tensor(self, image: BinaryIO) -> tf.Tensor:
         """convert image to Tensor object"""

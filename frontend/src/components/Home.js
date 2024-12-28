@@ -10,7 +10,7 @@ const Home = () => {
     
     return (
         <div className="home-container">
-            <h1>embe zuri</h1>
+            <img src="/embe-zuri logo.png" alt="Embe Zuri" />
             <p>
                 Welcome to embe zuri. This app enables early detection of mango fruit tree diseases, and offers solutions to mitigate them.
             </p>
