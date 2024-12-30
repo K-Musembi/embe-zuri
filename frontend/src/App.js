@@ -7,7 +7,7 @@ import Result from './components/Result';
 import Information from './components/Information';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
-import Team from './components/Team';
+import About from './components/About';
 import Logout from './components/Logout';
 import NavBar from "./components/NavBar";
 import './App.css';
@@ -28,7 +28,7 @@ const App = () => {
                     <Route path="/information" element={<MainLayout><Information prediction={prediction} /></MainLayout>} />
                     <Route path="/signup" element={<MainLayout><SignUp onSignUp={setIsLoggedIn}/></MainLayout>} />
                     <Route path="/login" element={<MainLayout><Login onLogin={setIsLoggedIn}/></MainLayout>} />
-                    <Route path="/team" element={<MainLayout><Team /></MainLayout>} />
+                    <Route path="/about" element={<MainLayout><About /></MainLayout>} />
                     <Route path="/logout" element={<MainLayout><Logout onLogout={setIsLoggedIn}/></MainLayout>} />
                 </Routes>
             </div>
