@@ -254,50 +254,54 @@ footer a:hover {
 }
 
 .image-upload-container h2 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
   color: #333;
-  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.image-upload-container input[type="file"] {
-  margin-bottom: 20px;
-  padding: 10px;
-  font-size: 1em;
-  cursor: pointer;
+#file-upload {
+  margin: 1rem 0;
 }
 
-.image-upload-container button {
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #007bff;
+button {
+  background: #4CAF50;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 30px;
-}
-
-.image-upload-container button:hover {
-  background-color: #0056b3;
-}
-
-.custom-file-upload {
-  display: inline-block;
   padding: 10px 20px;
-  cursor: pointer;
-  background-color: #4CAF50; /* Button color */
-  color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  text-align: center;
-  margin-top: 10px;
+  border-radius: 4px;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.custom-file-upload:hover {
-  background-color: #45a049; /* Slightly darker color on hover */
+button:hover {
+  background: #45a049;
+}
+
+.preview {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.preview img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+video {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  .image-upload-container {
+      margin: 1rem;
+      padding: 10px;
+  }
 }
 
 /* Overall styling */
