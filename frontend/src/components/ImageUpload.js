@@ -37,7 +37,7 @@ const ImageUpload = ({ onResult }) => {
         try {
             const response = await fetch(`${API_URL}/upload`, {
                 method: "POST",
-                body: data,
+                body: data,         
             });
             if (response.ok) {
                 const result = await response.json();

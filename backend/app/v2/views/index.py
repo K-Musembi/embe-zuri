@@ -65,6 +65,9 @@ def logout():
 @v2_app_views.route("/upload", methods=['POST'], strict_slashes=False)
 def upload():
     """ handle image upload """
+    if 'image' not in request.files:
+        return jsonify({"error": "no image upoaded"}), 400
+    
     image = request.files.get("image")
     
     if image:

@@ -506,18 +506,18 @@ video {
   position: relative;
 }
 
-.description {
+.about-app-description {
   width: 40%;
   padding: 10%;
 }
 
-.description h1 {
+.about-app-description h1 {
   margin-bottom: 30px;
   color: var(--dark-green);
   text-align: center;
 }
 
-.description p {
+.about-app-description p {
   margin: 8px 0; /* Slight margin for separation */
   font-size: 1.1rem;
   color: #444;
