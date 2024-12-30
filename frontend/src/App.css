@@ -110,14 +110,12 @@ footer a:hover {
   text-align: center;
 }
 
-.home-container img {
-  width: 150px;
-  height: auto;
+.home-container h2 {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  margin: 0;
-  display: block;
+  top: 60px;
+  left: 60px;
+  color: var(--dark-green);
+  font-weight: bold;
 }
 
 .home-container p {
