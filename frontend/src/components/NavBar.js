@@ -14,7 +14,7 @@ const NavBar = ({ isLoggedIn }) => {
             <button class="burger-menu" onclick={toggleMenu}>☰</button>
             <ul className={menuActive ? 'active' : ''}>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
+                <li><Link to="/about">About app</Link></li>
                 <li><Link to="/upload">Upload Image</Link></li>
                 {isLoggedIn ? (
                     <li><Link to="/logout">Logout</Link></li>
