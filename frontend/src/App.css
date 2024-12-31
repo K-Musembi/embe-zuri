@@ -479,6 +479,16 @@ video {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for a lifted effect */
 }
 
+.no-information {
+  text-align: center;
+  color: #666;
+}
+
+.no-information p {
+  text-align: center;
+  color: #666;
+}
+
 /* Team Container */
 .about-container {
   background-color: ffffff;

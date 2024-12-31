@@ -44,7 +44,9 @@ const Information = ({ prediction }) => {
                     </div>
                 </>
             ) : (
-                <h2>No information available. Please upload image again.</h2>
+                <div className="no-information">
+                    <p>No information available. Please upload image again.</p>
+                </div>
             )}
         </div>
     );
