@@ -95,6 +95,25 @@ footer a:hover {
   color: var(--text-dark);
 }
 
+/* Burger Menu Button */
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.nav-menu {
+  transition: transform 0.3s ease-out;
+}
+
+.nav-menu.active {
+  transform: translateX(0);
+}
+
 /* Home Container Styling */
 .home-container {
   display: flex;
@@ -567,17 +586,6 @@ video {
   text-align: center;
 }
 
-/* Burger Menu Button */
-.burger-menu {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--white);
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-}
-
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .result-container {
@@ -588,11 +596,6 @@ video {
   .prediction-outcome,
   .recommendations {
     padding: 15px;
-  }
-
-  .information-panel {
-    flex-direction: column;
-    gap: 10px;
   }
 
   .burger-menu {
@@ -638,5 +641,50 @@ video {
   .nav-bar a {
       display: block;
       padding: 10px;
+  }
+
+  .nav-menu {
+    transform: translateX(-100%);
+  }
+
+  .about {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .about img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .about-app-description {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  /* Information Panel */
+  .information-panel {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .left-panel, 
+  .right-panel {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .right-panel .image {
+    min-height: 200px;
+  }
+
+  .description p, 
+  .appearance-causes p {
+    max-width: 100%;
+    padding: 0 10px;
   }
 }

@@ -9,17 +9,21 @@ const NavBar = ({ isLoggedIn }) => {
         setMenuActive(!menuActive);
     };
 
+    const closeMenu = () => {
+        setMenuActive(false);
+    }
+
     return (
         <nav className="nav-bar">
             <button className="burger-menu" onClick={toggleMenu}>☰</button>
-            <ul className={menuActive ? 'active' : ''}>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/upload">Upload Image</Link></li>
+            <ul className={`nav-menu ${menuActive ? 'active' : ''}`}>
+                <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+                <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+                <li><Link to="/upload" onClick={closeMenu}>Upload Image</Link></li>
                 {isLoggedIn ? (
-                    <li><Link to="/logout">Logout</Link></li>
+                    <li><Link to="/logout" onClick={closeMenu}>Logout</Link></li>
                 ) : (
-                    <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/login" onClick={closeMenu}>Login</Link></li>
                 )}
             </ul>
         </nav>
