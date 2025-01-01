@@ -297,10 +297,41 @@ video {
   border-radius: 4px;
 }
 
+.camera-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-container video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.camera-container button {
+  margin: 10px;
+  z-index: 1001;
+}
+
 @media (max-width: 480px) {
   .image-upload-container {
       margin: 1rem;
       padding: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .camera-button {
+      display: none;
   }
 }
 
@@ -559,13 +590,27 @@ video {
     padding: 15px;
   }
 
+  .information-panel {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .burger-menu {
     display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--text-color);
   }
 
   .nav-bar {
-      padding: 10px;
+      padding: 5px 10px;
       position: relative;
+      height: 50px;
+      display: flex;
+      align-items: end;
   }
 
   .nav-bar ul {
@@ -578,6 +623,7 @@ video {
       background-color: var(--dark-green);
       padding: 20px;
       gap: 10px;
+      transition: all 0.3s ease-in-out;
   }
 
   .nav-bar ul.active {
@@ -591,6 +637,6 @@ video {
 
   .nav-bar a {
       display: block;
-      padding: 15px;
+      padding: 10px;
   }
 }

@@ -11,7 +11,7 @@ const NavBar = ({ isLoggedIn }) => {
 
     return (
         <nav className="nav-bar">
-            <button class="burger-menu" onclick={toggleMenu}>☰</button>
+            <button className="burger-menu" onClick={toggleMenu}>☰</button>
             <ul className={menuActive ? 'active' : ''}>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>

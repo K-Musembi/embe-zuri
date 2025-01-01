@@ -26,12 +26,10 @@ jobs:
           cd /home/ubuntu/embe-zuri/backend
           sudo systemctl restart gunicorn
           cd /home/ubuntu/embe-zuri/frontend
-          npm add react-webcam
           npm run build
           sudo systemctl restart nginx
         EOF
 
 # git stash: override local changes on server; rely on GitHub commited changes
-# git lfs pull: after git pull; for now, scp command used for file transfer
 # Add: 'pip3 install -r requirements.txt' if backend dependencies are added
 # Add: 'npm install' if frontend dependencies are added

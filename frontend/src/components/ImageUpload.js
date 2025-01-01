@@ -1,28 +1,39 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 import { API_URL } from "../config";
 
 const ImageUpload = ({ onResult }) => {
     const [img, setImg] = useState(null);
-    const [showWebcam, setShowWebcam] = useState(true);
+    const [showWebcam, setShowWebcam] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const navigate = useNavigate();
     const webcamRef = useRef(null);
 
+    // Check if device is mobile on component mount
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const handleFileChange = (event) => {
-        const file = event.target.files[0]
-        setImg(file);  // when event occurs, set file
+        const file = event.target.files[0];
+        setImg(file);
         setShowWebcam(false);
     };
 
     const captureImage = useCallback(() => {
         const imageSrc = webcamRef.current.getScreenshot();
         if (imageSrc) {
-            // convert base64 to file
             fetch(imageSrc)
                 .then(res => res.blob())
                 .then(blob => {
-                    setImg(new File([blob], 'webcam.jpg', { type: 'image/jpeg' }));
+                    setImg(new File([blob], 'camera.jpg', { type: 'image/jpeg' }));
                     setShowWebcam(false);
                 });
         }
@@ -52,19 +63,40 @@ const ImageUpload = ({ onResult }) => {
     return (
         <div className="image-upload-container">
             <h2>Upload a mango leaf image</h2>
-            {/*<label htmlFor="file-upload" className="custom-file-upload">
-                Choose File
-            </label>*/}
             <input id="file-upload" type="file" accept="image/*" onChange={handleFileChange} />
-            {showWebcam ? (
-                <Webcam ref={webcamRef} screenshotFormat="image/jpeg" />
-            ) : (
+            
+            {isMobile && (
+                <>
+                    <button onClick={() => setShowWebcam(true)} className="camera-button">
+                        Open Camera
+                    </button>
+                    
+                    {showWebcam && (
+                        <div className="camera-container">
+                            <Webcam 
+                                ref={webcamRef}
+                                screenshotFormat="image/jpeg"
+                                videoConstraints={{
+                                    facingMode: { exact: "environment" },
+                                    aspectRatio: 1
+                                }}
+                            />
+                            <button onClick={captureImage}>Take Photo</button>
+                            <button onClick={() => setShowWebcam(false)}>Cancel</button>
+                        </div>
+                    )}
+                </>
+            )}
+
+            {img && !showWebcam && (
                 <div className="preview">
                     <img src={URL.createObjectURL(img)} alt="preview" />
                 </div>
             )}
-            <button onClick={captureImage}>Take leaf photo</button>
-            <button onClick={handleUpload}>Upload</button>
+
+            <button onClick={handleUpload} disabled={!img}>
+                Upload
+            </button>
         </div>
     );
 };
