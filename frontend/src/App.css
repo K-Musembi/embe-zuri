@@ -649,10 +649,10 @@ video {
 
   .about {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;  /* force vertical layout */
     align-items: center;
+    width: 100%;
     padding: 1rem;
-    gap: 1.5rem;
   }
 
   .about img {
@@ -660,12 +660,13 @@ video {
     width: 100%;
     max-width: 300px;
     height: auto;
-    object-fit: cover;
+    margin-bottom: 1rem;
   }
 
   .about-app-description {
     order: 2;
     width: 100%;
+    max-width: 100%;
     padding: 0 1rem;
     text-align: center;
   }
