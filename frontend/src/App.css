@@ -648,22 +648,26 @@ video {
   }
 
   .about {
+    display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 20px;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
   }
 
   .about img {
+    order: 1;
     width: 100%;
     max-width: 300px;
     height: auto;
-    margin: 0 auto;
+    object-fit: cover;
   }
 
   .about-app-description {
+    order: 2;
     width: 100%;
+    padding: 0 1rem;
     text-align: center;
-    padding: 0;
   }
 
   /* Information Panel */
