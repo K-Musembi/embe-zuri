@@ -5,7 +5,6 @@ from . import db
 from datetime import datetime
 from typing import Dict, Any
 import uuid
-import json
 
 
 class BaseModel(db.Model):
@@ -36,7 +35,7 @@ class BaseModel(db.Model):
         db.session.delete(self)
         db.session.commit()
 
-    def to_json(self):
+    def to_dict(self):
         """json format of instance attributes"""
         attributes = {}
         for key, value in self.__dict__:
@@ -47,7 +46,7 @@ class BaseModel(db.Model):
 
             attributes[key] = value
 
-        return json.dumps(attributes)
+        return attributes
 
     def updated(self, **kwargs: Dict[str, Any]):
         """update instance attributes"""
@@ -62,6 +61,8 @@ class BaseModel(db.Model):
 
         self.updated_at = datetime.now()
         self.save_to_db()
+
+        return self
 
     @classmethod
     def all_objects(cls):
