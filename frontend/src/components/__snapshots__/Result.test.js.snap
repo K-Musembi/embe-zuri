@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Result Component renders correctly with result 1`] = `
+<div
+  className="result-panel"
+>
+  <div
+    className="result-container"
+  >
+    <div
+      className="prediction-outcome"
+    >
+      <h2>
+        Prediction outcome
+      </h2>
+      <h3
+        className="healthy"
+      >
+        Healthy
+      </h3>
+      <h3>
+        Confidence: 
+        85
+        %
+      </h3>
+    </div>
+    <div
+      className="recommendations"
+    >
+      <h2>
+        Recommendations
+      </h2>
+      <div
+        className="remedy"
+      >
+        Use antifungal spray
+      </div>
+      <div
+        className="remedy"
+      >
+        Ensure proper ventilation
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    More Information
+  </button>
+</div>
+`;

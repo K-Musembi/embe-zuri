@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp Component renders correctly 1`] = `
+<div
+  className="signup-login-container"
+>
+  <h2>
+    Create Account
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Username
+      <input
+        onChange={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+    </label>
+    <label>
+      Email
+      <input
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </label>
+    <label>
+      password
+      <input
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </label>
+    <button
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </form>
+</div>
+`;

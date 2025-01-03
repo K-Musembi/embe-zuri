@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Information Component renders correctly with result 1`] = `
+<div
+  className="result-panel"
+>
+  <div
+    className="result-container"
+  >
+    <div
+      className="prediction-outcome"
+    >
+      <h2>
+        Prediction outcome
+      </h2>
+      <h3
+        className="not-healthy"
+      >
+        Not healthy: Disease detected
+      </h3>
+      <h3>
+        Probable disease: 
+      </h3>
+      <h3>
+        Confidence: 
+        %
+      </h3>
+    </div>
+    <div
+      className="recommendations"
+    >
+      <h2>
+        Recommendations
+      </h2>
+      <div
+        className="remedy"
+      >
+        Use antifungal spray
+      </div>
+      <div
+        className="remedy"
+      >
+        Ensure proper ventilation
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    More Information
+  </button>
+</div>
+`;
+
+exports[`Information Component renders no-information state correctly 1`] = `
+<div
+  className="information-panel"
+>
+  <div
+    className="no-information"
+  >
+    <p>
+      No information available. Please upload image again.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Result Component renders correctly with result 1`] = `
+<div
+  className="result-panel"
+>
+  <div
+    className="result-container"
+  >
+    <div
+      className="prediction-outcome"
+    >
+      <h2>
+        Prediction outcome
+      </h2>
+      <h3
+        className="not-healthy"
+      >
+        Not healthy: Disease detected
+      </h3>
+      <h3>
+        Probable disease: 
+      </h3>
+      <h3>
+        Confidence: 
+        %
+      </h3>
+    </div>
+    <div
+      className="recommendations"
+    >
+      <h2>
+        Recommendations
+      </h2>
+      <div
+        className="remedy"
+      >
+        Use antifungal spray
+      </div>
+      <div
+        className="remedy"
+      >
+        Ensure proper ventilation
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    More Information
+  </button>
+</div>
+`;

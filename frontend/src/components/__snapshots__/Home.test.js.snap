@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component snapshot test 1`] = `
+<div
+  className="home-container"
+>
+  <h1>
+    embe zuri
+  </h1>
+  <p>
+    Welcome to embe zuri. This app enables early detection of mango fruit tree diseases, and offers solutions to mitigate them.
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Get Started
+  </button>
+</div>
+`;

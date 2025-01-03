@@ -14,4 +14,6 @@ def my_app():
 @pytest.fixture
 def client(my_app):
     """Flask test client"""
-    return my_app.test_client()
+    return my_app.test_client()   
+
+# test_client() is a method provided by Flask for testing routes.
