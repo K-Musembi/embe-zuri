@@ -57,6 +57,12 @@ const Help = () => {
                         <p key={{index}}>{item}</p>
                     ))}
                 </div>
+                <div>
+                    <h2>Information on predicted diseases</h2>
+                    {userGuide?.information.map((item, index) => (
+                        <p key={{index}}>{item}</p>
+                    ))}
+                </div>
                 <div className="help-footer">
                     <h2>For further assistance</h2>
                     <h3>{userGuide?.introduction}</h3>

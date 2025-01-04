@@ -17,6 +17,7 @@ class Help(BaseModel):
     access = db.Column(db.Json, nullable=True)
     uploading = db.Column(db.JSON, nullable=True)
     results = db.Column(db.JSON, nullable=True)
+    information = db.Column(db.JSON, nullable=True)
     chat = db.column(db.Json, nullable=True)
 
     def __init__(self, **kwargs: Dict[str, Any]):
@@ -34,6 +35,7 @@ class Help(BaseModel):
         self.access = kwargs.get("access", {})
         self.uploading = kwargs.get("uploading", {})
         self.results = kwargs.get("results", {})
+        self.information = kwargs.get("information", {})
         self.chat = kwargs.get("chat", {})
 
     def __str__(self):

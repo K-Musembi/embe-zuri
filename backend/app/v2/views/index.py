@@ -135,6 +135,7 @@ def help():
         "access": help.access,
         "uploading": help.uploading,
         "results": help.results,
+        "information": help.information,
         "assistance": help.assistance
         }
     
