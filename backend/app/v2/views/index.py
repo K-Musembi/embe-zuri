@@ -6,7 +6,7 @@ from . import v2_app_views
 from app.v2.prediction import Prediction
 from app.v2.prediction_lite import Prediction_Lite
 from werkzeug.security import generate_password_hash, check_password_hash
-from model import User, MangoDiagnosis, UserQuery, MangoInfo
+from model import User, MangoDiagnosis, UserQuery, MangoInfo, Help
 from PIL import Image
 from base64 import b64encode
 import io
@@ -79,13 +79,11 @@ def upload():
             image = Image.open(image)
 
         preprocessed_image = pd.preprocessing(image)
-        # mangoleaf = pd.is_mangoleaf(preprocessed_image) 
         result = pd.predict(preprocessed_image)
 
         name = result["prediction"]
         diagnosis = MangoDiagnosis.query.filter_by(name=name).first()
         result.update({"remedies": diagnosis.remedies})
-        # result.update({"mangoleaf": float(mangoleaf)})
 
         if "user_id" in session:
             query = UserQuery(
@@ -122,6 +120,25 @@ def information():
     }
 
     return jsonify(info), 200
+
+
+@v2_app_views.route("/help", strict_slashes=False)
+def help():
+    """retrieve help information for user"""
+
+    help = Help.query.filter_by(title="user_guide").first()
+
+    user_guide = {
+        "title": help.title,
+        "introduction": help.introduction,
+        "navigation": help.navigation,
+        "access": help.access,
+        "uploading": help.uploading,
+        "results": help.results,
+        "assistance": help.assistance
+        }
+    
+    return jsonify(user_guide), 200
 
 
 @v2_app_views.route("/admin", strict_slashes=False)

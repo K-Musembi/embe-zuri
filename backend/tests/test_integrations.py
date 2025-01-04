@@ -44,3 +44,10 @@ def test_information(client):
 
     assert response.status_code == 200
     assert response.json.get("name") == "Healthy"
+
+def test_help(client):
+    """test help route"""
+    response = client.get("/help")
+
+    assert response.status_code == 200
+    assert response.json.get("title") == "user_guide"
