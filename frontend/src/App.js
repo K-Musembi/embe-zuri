@@ -9,6 +9,7 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import About from './components/About';
 import Logout from './components/Logout';
+import Help from "./components/Help";
 import NavBar from "./components/NavBar";
 import './App.css';
 
@@ -30,6 +31,7 @@ const App = () => {
                     <Route path="/login" element={<MainLayout><Login onLogin={setIsLoggedIn}/></MainLayout>} />
                     <Route path="/about" element={<MainLayout><About /></MainLayout>} />
                     <Route path="/logout" element={<MainLayout><Logout onLogout={setIsLoggedIn}/></MainLayout>} />
+                    <Route path="/help" element={<MainLayout><Help /></MainLayout>} />
                 </Routes>
             </div>
         </Router>

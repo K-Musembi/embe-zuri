@@ -25,6 +25,7 @@ const NavBar = ({ isLoggedIn }) => {
                 ) : (
                     <li><Link to="/login" onClick={closeMenu}>Login</Link></li>
                 )}
+                <li><Link to="/help" onClick={closeMenu}>Help</Link></li>
             </ul>
         </nav>
     );
