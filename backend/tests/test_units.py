@@ -2,7 +2,7 @@
 """test application models"""
 from app.v2.app import app
 from app.v2.app import db
-from model import User, MangoDiagnosis, MangoInfo
+from model import User, MangoDiagnosis, MangoInfo, Help
 
 
 def test_user():
@@ -34,3 +34,15 @@ def test_mango_info():
         assert mango_info.name == "Test"
         assert mango_info.causes == ["one", "two"]
         assert str(mango_info) == "mango information instance"
+
+def test_help():
+    """test help model"""
+    with app.app_context():
+        help = Help(
+            title="Test", assistance="my email", introduction=["one", "two"])
+        help.add_to_db()
+
+        assert help.title == "Test"
+        assert help.assistance == "my email"
+        assert help.introduction == ["one", "two"]
+        assert str(help) == "help function object"

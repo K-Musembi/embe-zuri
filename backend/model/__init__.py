@@ -9,3 +9,4 @@ from .mango_diagnosis import MangoDiagnosis
 from .user import User
 from .user_query import UserQuery
 from .mango_info import MangoInfo
+from .help import Help

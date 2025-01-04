@@ -1,0 +1,42 @@
+#!/usr/bin/python3
+"""help function module"""
+
+from .base_model import BaseModel
+from . import db
+from typing import Dict, Any
+
+
+class Help(BaseModel):
+    """help function class"""
+    __tablename__ = "help"
+
+    title  = db.Column(db.String(50), nullable=False)
+    assistance = db.Column(db.String(50), nullable=True)
+    introduction = db.Column(db.JSON, nullable=True)
+    navigation = db.Column(db.JSON, nullable=True)
+    access = db.Column(db.Json, nullable=True)
+    uploading = db.Column(db.JSON, nullable=True)
+    results = db.Column(db.JSON, nullable=True)
+    chat = db.column(db.Json, nullable=True)
+
+    def __init__(self, **kwargs: Dict[str, Any]):
+        """create help instance"""
+
+        super().__init__()
+
+        if "title" not in kwargs:
+            raise ValueError("title attribute required")
+
+        self.title = kwargs.get("title")
+        self.assistance = kwargs.get("assistance", "")
+        self.introduction = kwargs.get("introduction", {})
+        self.navigation = kwargs.get("navigation", {})
+        self.access = kwargs.get("access", {})
+        self.uploading = kwargs.get("uploading", {})
+        self.results = kwargs.get("results", {})
+        self.chat = kwargs.get("chat", {})
+
+    def __str__(self):
+        """help instance string representation"""
+
+        return """help function object"""

@@ -23,12 +23,14 @@ class MangoInfo(BaseModel):
 
         if "name" not in kwargs:
             raise ValueError("name attribute required")
-        
+
         self.name = kwargs.get("name")
         self.image = kwargs.get("image", {})
         self.general_info = kwargs.get("general_info", {})
         self.causes = kwargs.get("causes", {})
         self.remedies = kwargs.get("remedies", {})
-    
+
     def __str__(self):
+        """mango info instance string representation"""
+
         return """mango information instance"""
