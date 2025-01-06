@@ -12,7 +12,7 @@ class Help(BaseModel):
 
     title  = db.Column(db.String(50), nullable=False)
     assistance = db.Column(db.String(50), nullable=True)
-    introduction = db.Column(db.JSON, nullable=True)
+    general_description = db.Column(db.JSON, nullable=True)
     navigation = db.Column(db.JSON, nullable=True)
     access = db.Column(db.Json, nullable=True)
     uploading = db.Column(db.JSON, nullable=True)
@@ -30,7 +30,7 @@ class Help(BaseModel):
 
         self.title = kwargs.get("title")
         self.assistance = kwargs.get("assistance", "")
-        self.introduction = kwargs.get("introduction", {})
+        self.general_description = kwargs.get("general_description", {})
         self.navigation = kwargs.get("navigation", {})
         self.access = kwargs.get("access", {})
         self.uploading = kwargs.get("uploading", {})

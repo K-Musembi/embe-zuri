@@ -130,7 +130,7 @@ def help():
 
     user_guide = {
         "title": help.title,
-        "introduction": help.introduction,
+        "description": help.general_description,
         "navigation": help.navigation,
         "access": help.access,
         "uploading": help.uploading,

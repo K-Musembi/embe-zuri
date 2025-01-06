@@ -30,8 +30,8 @@ const Help = () => {
             </div>
             <div className="help-content">
                 <div>
-                    <h2>Introduction</h2>
-                    <p>{userGuide?.introduction}</p>
+                    <h2>General Description</h2>
+                    <p>{userGuide?.description}</p>
                 </div>
                 <div>
                     <h2>Navigating the application</h2>
