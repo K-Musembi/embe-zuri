@@ -14,11 +14,11 @@ class Help(BaseModel):
     assistance = db.Column(db.String(50), nullable=True)
     general_description = db.Column(db.JSON, nullable=True)
     navigation = db.Column(db.JSON, nullable=True)
-    access = db.Column(db.Json, nullable=True)
+    access = db.Column(db.JSON, nullable=True)
     uploading = db.Column(db.JSON, nullable=True)
     results = db.Column(db.JSON, nullable=True)
     information = db.Column(db.JSON, nullable=True)
-    chat = db.column(db.Json, nullable=True)
+    chat = db.Column(db.JSON, nullable=True)
 
     def __init__(self, **kwargs: Dict[str, Any]):
         """create help instance"""

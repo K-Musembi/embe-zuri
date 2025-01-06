@@ -126,17 +126,16 @@ def information():
 def help():
     """retrieve help information for user"""
 
-    help = Help.query.filter_by(title="user_guide").first()
+    get_help = Help.query.filter_by(title="user_guide").first()
 
     user_guide = {
-        "title": help.title,
-        "description": help.general_description,
-        "navigation": help.navigation,
-        "access": help.access,
-        "uploading": help.uploading,
-        "results": help.results,
-        "information": help.information,
-        "assistance": help.assistance
+        "title": get_help.title,
+        "description": get_help.general_description,
+        "navigation": get_help.navigation,
+        "access": get_help.access,
+        "uploading": get_help.uploading,
+        "results": get_help.results,
+        "assistance": get_help.assistance
         }
     
     return jsonify(user_guide), 200
