@@ -567,6 +567,38 @@ video {
   max-width: 45%;
 }
 
+.help-panel {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  height: calc(100vh - 0px); /* total page height */
+  box-sizing: border-box;
+}
+
+.title,
+.help-footer {
+  height: 25%;
+  border: 2px solid #9ACD32; /* yellow-green border */
+  background-color: #ADFF2F; /* yellow-green background */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.help-content {
+  height: 12.5%;
+  border: 2px solid #9ACD32;
+  background-color: #ADFF2F;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+  margin: 0.5rem 0;
+  color: #556B2F; /* darker yellow-green text */
+  font-family: sans-serif;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .result-container {
@@ -672,5 +704,15 @@ video {
   .appearance-causes p {
     max-width: 100%;
     padding: 0 10px;
+  }
+
+  .help-panel {
+    height: auto; /* allow auto height on mobile */
+  }
+  .title,
+  .help-footer,
+  .help-content {
+    height: auto;
+    margin-bottom: 1rem;
   }
 }
