@@ -567,36 +567,68 @@ video {
   max-width: 45%;
 }
 
-.help-panel {
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
+.help-container {
+  max-width: 1200px;
   margin: 0 auto;
-  height: calc(100vh - 0px); /* total page height */
-  box-sizing: border-box;
+  padding: 2rem;
+  background-color: #fff;
 }
 
-.title,
-.help-footer {
-  height: 25%;
-  border: 2px solid #9ACD32; /* yellow-green border */
-  background-color: #ADFF2F; /* yellow-green background */
-  padding: 1rem;
-  box-sizing: border-box;
+.help-header {
+  background-color: #9acd32;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.help-header h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 2rem;
 }
 
 .help-content {
-  height: 12.5%;
-  border: 2px solid #9ACD32;
-  background-color: #ADFF2F;
-  padding: 1rem;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-h1, h2, h3, p {
-  margin: 0.5rem 0;
-  color: #556B2F; /* darker yellow-green text */
-  font-family: sans-serif;
+.help-panel {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #d3d3d3;
+}
+
+.help-panel h2 {
+  color: #9acd32;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.help-panel p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.help-footer {
+  background-color: #d3d3d3;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.help-footer h2 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.help-footer h3 {
+  color: #666;
+  font-size: 1.2rem;
 }
 
 /* Responsive Design */
@@ -706,13 +738,28 @@ h1, h2, h3, p {
     padding: 0 10px;
   }
 
-  .help-panel {
-    height: auto; /* allow auto height on mobile */
+  .help-container {
+    padding: 1rem;
   }
-  .title,
-  .help-footer,
+
   .help-content {
-    height: auto;
-    margin-bottom: 1rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+  }
+
+  .help-header h1 {
+      font-size: 1.5rem;
+  }
+
+  .help-panel h2 {
+      font-size: 1.2rem;
+  }
+
+  .help-footer h2 {
+      font-size: 1.2rem;
+  }
+
+  .help-footer h3 {
+      font-size: 1rem;
   }
 }
