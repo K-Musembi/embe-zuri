@@ -10,12 +10,15 @@ const Home = () => {
     
     return (
         <div className="home-container">
-            {/*<img src="/embe-zuri logo.png" alt="Embe Zuri" />*/}
-            <h1>embe zuri</h1>
-            <p>
-                Welcome to embe zuri. This app enables early detection of mango fruit tree diseases, and offers solutions to mitigate them.
-            </p>
-            <button onClick={handleGetStarted}>Get Started</button>
+            <div className="home-logo">
+                <h1>embe zuri</h1>
+            </div>
+            <div className="home-tagline">
+                <p>
+                    Welcome to embe zuri. This app enables early detection of mango fruit tree diseases, and offers solutions to mitigate them.
+                </p>
+                <button onClick={handleGetStarted}>Get Started</button>
+            </div>
         </div>
     );
 };

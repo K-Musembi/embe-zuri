@@ -114,52 +114,59 @@ footer a:hover {
   transform: translateX(0);
 }
 
-/* Home Container Styling */
 .home-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: ffffff;
-  background-size: cover;
-  background-position: center;
-  /*background: url('image.jpg') center/cover no-repeat;*/
-  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.home-logo {
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-.home-container h1 {
-  position: absolute;
-  top: 60px;
-  left: 60px;
-  color: var(--dark-green);
+.home-logo h1 {
+  font-size: 4rem;
+  color: #9acd32;
+  text-transform: uppercase;
   font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
-.home-container p {
+.home-tagline {
+  max-width: 600px;
+  text-align: center;
+}
+
+.home-tagline p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 500px;
-  color: var(--dark-green);
-  font-weight: bold;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2rem;
 }
 
-/* Button Styling */
-.home-container button {
-  padding: 10px 20px;
-  background-color: var(--dark-green);
-  color: var(--white);
+.home-tagline button {
+  background-color: #9acd32;
+  color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.home-container button:hover {
-  background-color: var(--yellow-green);
-  color: var(--text-dark);
+.home-tagline button:hover {
+  background-color: #8bb92d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* SignUp and Login Form Container */
@@ -176,7 +183,7 @@ footer a:hover {
 }
 
 .signup-login-container h2 {
-  color: var(--dark-green);
+  color: #9acd32;
   margin-bottom: 20px;
   font-size: 1.8rem;
 }
@@ -273,7 +280,7 @@ footer a:hover {
 }
 
 .image-upload-container h2 {
-  color: #333;
+  color: #9acd32;
   margin-bottom: 1.5rem;
 }
 
@@ -339,19 +346,6 @@ video {
 .camera-container button {
   margin: 10px;
   z-index: 1001;
-}
-
-@media (max-width: 480px) {
-  .image-upload-container {
-      margin: 1rem;
-      padding: 10px;
-  }
-}
-
-@media (min-width: 769px) {
-  .camera-button {
-      display: none;
-  }
 }
 
 /* Overall styling */
@@ -567,6 +561,15 @@ video {
   max-width: 45%;
 }
 
+.about-app-description h1 {
+  color: #9acd32;
+}
+
+.about-app-description p {
+  color: 333;
+  line-height: 1.6;
+}
+
 .help-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -589,7 +592,7 @@ video {
 
 .help-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -631,8 +634,21 @@ video {
   font-size: 1.2rem;
 }
 
-/* Responsive Design */
+/* Mobile Responsive Design */
 @media screen and (max-width: 768px) {
+  .home-logo h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-tagline p {
+      font-size: 1rem;
+      padding: 0 1rem;
+  }
+
+  .home-tagline button {
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+  }
   .result-container {
     flex-direction: column;
     gap: 10px;
@@ -716,6 +732,10 @@ video {
     padding: 0 1rem;
   }
 
+  .camera-button {
+    display: none;
+  }
+
   /* Information Panel */
   .information-panel {
     flex-direction: column;
@@ -761,5 +781,20 @@ video {
 
   .help-footer h3 {
       font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-logo h1 {
+      font-size: 2rem;
+  }
+
+  .home-container {
+      padding: 1rem;
+  }
+
+  .image-upload-container {
+    margin: 1rem;
+    padding: 10px;
   }
 }
