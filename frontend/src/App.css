@@ -745,26 +745,45 @@ video {
     padding: 0 1rem;
   }
 
-  /* Information Panel */
   .information-panel {
     flex-direction: column;
-    padding: 15px;
+    padding: 10px;
+    gap: 15px;
+    min-height: auto;
   }
 
-  .left-panel, 
+  .left-panel,
   .right-panel {
     width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .right-panel .image {
-    min-height: 200px;
+    padding: 15px;
   }
 
   .description p, 
   .appearance-causes p {
+    font-size: 0.95rem;
     max-width: 100%;
-    padding: 0 10px;
+  }
+
+  .right-panel .image {
+    height: 250px; /* Fixed height for mobile */
+  }
+
+  .right-panel .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .tips-remedies .list {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .description h2, 
+  .appearance-causes h3,
+  .tips-remedies h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
   }
 
   .help-container {
@@ -800,5 +819,25 @@ video {
 
   .home-container {
       padding: 1rem;
+  }
+
+  .information-panel {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .left-panel,
+  .right-panel {
+    padding: 12px;
+  }
+
+  .right-panel .image {
+    height: 200px;
+  }
+
+  .description h2, 
+  .appearance-causes h3,
+  .tips-remedies h3 {
+    font-size: 1.2rem;
   }
 }
