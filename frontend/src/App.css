@@ -348,6 +348,19 @@ video {
   z-index: 1001;
 }
 
+@media (max-width: 480px) {
+  .image-upload-container {
+      margin: 1rem;
+      padding: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .camera-button {
+      display: none;
+  }
+}
+
 /* Overall styling */
 .result-panel {
   font-family: Arial, sans-serif;
@@ -732,10 +745,6 @@ video {
     padding: 0 1rem;
   }
 
-  .camera-button {
-    display: none;
-  }
-
   /* Information Panel */
   .information-panel {
     flex-direction: column;
@@ -791,10 +800,5 @@ video {
 
   .home-container {
       padding: 1rem;
-  }
-
-  .image-upload-container {
-    margin: 1rem;
-    padding: 10px;
   }
 }

@@ -62,7 +62,7 @@ const ImageUpload = ({ onResult }) => {
 
     return (
         <div className="image-upload-container">
-            <h2>Upload a mango leaf image</h2>
+            <h2>Upload mango leaf image</h2>
             <input id="file-upload" type="file" accept="image/*" onChange={handleFileChange} />
             
             {isMobile && (

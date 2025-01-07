@@ -24,10 +24,8 @@ jobs:
           git pull
           git lfs pull
           cd /home/ubuntu/embe-zuri/backend
-          pip3 install -U pytest
           sudo systemctl restart gunicorn
           cd /home/ubuntu/embe-zuri/frontend
-          npm install react-test-renderer@18 --save
           npm run build
           sudo systemctl restart nginx
         EOF
