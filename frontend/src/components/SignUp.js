@@ -18,7 +18,6 @@ const SignUp = ({ onSignUp }) => {
             body: JSON.stringify({ username, email, password })
         });
         if (response.ok) {
-            alert("Successfully signed up!");
             setUsername("");
             setEmail("");
             setPassword("");

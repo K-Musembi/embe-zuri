@@ -19,7 +19,6 @@ const Login = ({ onLogin }) => {
         if (response.ok) {
             // const result = await response.json();
             // onLogin(result.token);
-            alert("Successful login!");
             onLogin(true);
             navigate("/upload");
         } else {
