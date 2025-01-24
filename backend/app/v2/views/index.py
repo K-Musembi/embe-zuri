@@ -4,7 +4,6 @@
 from flask import jsonify, request, session
 from . import v2_app_views
 from app.v2.prediction import Prediction
-from app.v2.prediction_lite import Prediction_Lite
 from werkzeug.security import generate_password_hash, check_password_hash
 from model import User, MangoDiagnosis, UserQuery, MangoInfo, Help
 from PIL import Image
@@ -12,7 +11,6 @@ from base64 import b64encode
 import io
 
 pd = Prediction()
-# pd = Prediction_Lite()
 
 
 @v2_app_views.route("/signup", methods=['POST'], strict_slashes=False)
@@ -75,8 +73,6 @@ def upload():
             # tf.keras.pr...image.load_img() excpects a path or io.BytesIO obj
             image = io.BytesIO(image.read())
             image = pd.img_to_tensor(image)
-        elif isinstance(pd, Prediction_Lite):
-            image = Image.open(image)
 
         preprocessed_image = pd.preprocessing(image)
         result = pd.predict(preprocessed_image)

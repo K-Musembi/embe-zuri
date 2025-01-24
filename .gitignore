@@ -3,4 +3,8 @@ backend/*.pyc
 backend/**/__pycache__/
 venv
 *.keras
-frontend/build/
+frontend/build
+chrome/
+chromedriver/
+test.py
+__pycache__/

@@ -13,7 +13,6 @@ class MangoDiagnosis(BaseModel):
 
     name = db.Column(db.String(50), nullable=False)
     remedies = db.Column(db.JSON, nullable=True)
-    # remedies = db.Column(db.Text, nullable=True)
 
     def __init__(self, **kwargs: Dict[str, Any]):
         """initialize an object"""
