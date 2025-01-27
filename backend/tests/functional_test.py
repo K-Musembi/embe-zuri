@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # Path to Chrome binary
-chrome_path = "../chrome/chrome"  # chrome is in embe-zuri directory
+chrome_path = "./chrome/chrome"  # chrome is in embe-zuri directory
 
 # ChromeDriver path
 chromedriver_path = "/usr/bin/chromedriver"
@@ -24,12 +24,10 @@ service = Service(chromedriver_path)
 # Initialize the WebDriver
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
-# Perform test actions
 try:
     driver.get("https://embezuri.online")
     print("Page title:", driver.title)
 finally:
-    # Quit the driver
     driver.quit()
 
 def test_login():
