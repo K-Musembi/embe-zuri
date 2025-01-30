@@ -40,7 +40,7 @@ const ImageUpload = ({ onResult }) => {
     }, [webcamRef]);
 
     const handleUpload = async () => { 
-        if (!img) return;  // return if no file is selected
+        if (!img) return;
 
         const data = new FormData();
         data.append("image", img);
@@ -52,7 +52,7 @@ const ImageUpload = ({ onResult }) => {
             });
             if (response.ok) {
                 const result = await response.json();
-                onResult(result);  // pass result to parent component
+                onResult(result);
                 navigate("/result");
             }
         } catch (err) {

@@ -16,11 +16,9 @@ class Prediction():
     # load model once to prevent retracing
     def __init__(self) -> None:
         """initialize and load model"""
-
-        '''self.is_mango_model = tf.keras.models.load_model(
-            'app/v2/static/.........keras')'''
+        
         self.prediction_model = tf.keras.models.load_model(
-            'app/v2/static/refined_model_Dense201.keras')
+            'app/v2/static/refined_model_Dense201(a).keras')
 
     def img_to_tensor(self, image: BinaryIO) -> tf.Tensor:
         """convert image to Tensor object"""
