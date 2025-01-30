@@ -6,9 +6,9 @@ import numpy as np
 from typing import BinaryIO, List
 # import werkzeug
 
-mango_disease_names = ['Anthracnose', 'Bacterial Canker', 'Die Back',
-                       'Gall Midge', 'Healthy', 'Powdery Mildew',
-                       'Sooty Mould', 'unknown']
+mango_disease_names = ['Anthracnose', 'Bacterial Canker', 'Cutting Weevil',
+                       'Die Back', 'Gall Midge', 'Healthy', 'Powdery Mildew',
+                       'Sooty Mould']
 
 
 class Prediction():
