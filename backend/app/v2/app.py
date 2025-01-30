@@ -30,7 +30,7 @@ with app.app_context():
 
 app.register_blueprint(v2_app_views)
 
-CORS = CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+CORS = CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=False)
 
 
 @app.errorhandler(404)
@@ -53,4 +53,4 @@ def not_permitted(error):
 
 if __name__ == "__main__":
     """main function"""
-    app.run(host="0.0.0.0", port=5000, threaded=True, debug=False)  # threaded: verbose
+    app.run(host="0.0.0.0", port=5000, threaded=True, debug=True)  # threaded: verbose
