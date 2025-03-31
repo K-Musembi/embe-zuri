@@ -5,7 +5,7 @@ const Home = () => {
     const navigate = useNavigate();
 
     const handleGetStarted = () => {
-        navigate("/upload");
+        navigate("/login");
     }
     
     return (
