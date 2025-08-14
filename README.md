@@ -15,7 +15,7 @@ Implementation:
 - AWS EC2 cloud server
 ------------------------------------------------------------------------------
 Usage:
-- Access the application at - https//:embezuri.online
+- Access the application at - https://embezuri.online
 - Sign Up and Login
 - Upload mango leaf image
 - Wait for inference results
